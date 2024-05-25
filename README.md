@@ -12,5 +12,5 @@ To run this script use:
 
 
 ```
-python nations_run_formatting.py yourCSV.csv
+python nations_run_formatting.py <yourCSV>.csv
 ```
