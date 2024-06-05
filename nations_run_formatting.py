@@ -17,7 +17,7 @@ except ImportError:
 def main(input_file):
     # Read the CSV file
     df_nations_run = pd.read_csv(input_file)
-
+    print("Reading in ", input_file)
     # Initialize a dictionary to store the transformed data
     runner_spender_dict = {
         'Laeufer_Name': [],   # Runner's name
@@ -59,7 +59,7 @@ def main(input_file):
     # Generate the output file name by adding '_formatted' suffix to the input file name
     base_name = os.path.splitext(input_file)[0]
     output_file = f"{base_name}_formatted.xlsx"
-
+    print("Saving to ", output_file)
     # Save the DataFrame to an Excel file with the new name
     df_spender.to_excel(output_file, index=False)
 
