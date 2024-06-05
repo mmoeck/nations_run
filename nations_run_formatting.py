@@ -1,6 +1,18 @@
-import pandas as pd
+import subprocess
+import sys
 import argparse
 import os
+
+# Function to install pandas
+def install_pandas():
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "pandas"])
+
+try:
+    import pandas as pd
+except ImportError:
+    print("Pandas is not installed. Installing now...")
+    install_pandas()
+    import pandas as pd
 
 def main(input_file):
     # Read the CSV file
