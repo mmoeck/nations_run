@@ -14,6 +14,19 @@ except ImportError:
     install_pandas()
     import pandas as pd
 
+# Function to install openpyxl
+def install_openpyxl():
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "openpyxl"])
+    
+try:
+    import openpyxl
+except ImportError:
+    print("Openpyxl is not installed. Installing now...")
+    install_openpyxl()
+    import openpyxl
+    
+    
+
 def main(input_file):
     # Read the CSV file
     df_nations_run = pd.read_csv(input_file)
